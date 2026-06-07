@@ -715,17 +715,51 @@ footer{
    RESPONSIVE
 ═══════════════════════════════════════════════════ */
 @media(max-width:960px){
-  #hero{grid-template-columns:1fr;grid-template-rows:auto 55vw}
+  #hero{grid-template-columns:1fr;grid-template-rows:auto 70vw}
   .hr{border-left:none}
   nav{padding:1rem 1.5rem}.nav-links{display:none}
   .hl,.con,.contact-r{padding-left:1.5rem;padding-right:1.5rem}
   .exp-row{grid-template-columns:1fr;gap:1.2rem}
-  .bento{grid-template-columns:repeat(6,1fr)}
-  .b-jv,.b-fe,.b-mo,.b-cl,.b-sc,.b-db,.b-to,.b-ar{grid-column:auto;grid-row:auto}
+  /* BENTO — simple 2-col auto-height on mobile */
+  .bento{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:none;
+    grid-auto-rows:auto;
+    gap:8px;
+  }
+  .bc{height:auto;min-height:120px}
+  .b-jv,.b-fe,.b-mo,.b-cl,.b-sc,.b-db,.b-to,.b-ar{
+    grid-column:auto;grid-row:auto;
+  }
+  /* make java & angular full width on mobile since they're the main ones */
+  .b-jv,.b-fe{grid-column:span 2}
   .proj-grid{grid-template-columns:1fr}
   .contact-split{grid-template-columns:1fr}
   .about-inner{grid-template-columns:1fr;gap:2rem}
   footer{flex-direction:column;gap:.5rem;text-align:center;padding:1.2rem}
+  .impact-grid{grid-template-columns:repeat(4,1fr)}
+  .exp-row{border-top:1px solid var(--border)}
+  .hero-name{font-size:clamp(3.5rem,16vw,7rem)}
+  .stats-bar{grid-template-columns:repeat(2,1fr)}
+  .stats-bar .stat:nth-child(2){border-right:none}
+  .stats-bar .stat:nth-child(3){border-top:1px solid var(--border)}
+  .stats-bar .stat:nth-child(4){border-top:1px solid var(--border);border-right:none}
+}
+@media(max-width:600px){
+  .bento{grid-template-columns:1fr}
+  .b-jv,.b-fe{grid-column:span 1}
+  .impact-grid{grid-template-columns:1fr 1fr}
+  .proj-grid{grid-template-columns:1fr}
+  .c-big{font-size:clamp(2.5rem,12vw,4rem)}
+  .contact-split{grid-template-columns:1fr}
+  .contact-l,.contact-r{padding:3rem 1.5rem}
+  .about-band{padding:4rem 1.5rem;clip-path:polygon(0 4%,100% 0%,100% 96%,0 100%)}
+  .about-inner{padding:0 0}
+  .sec-ttl{font-size:clamp(1.8rem,8vw,3rem)}
+  .exp-co{font-size:1.5rem}
+  .bc-name{font-size:.95rem}
+  .pcard{padding:1.5rem}
 }
 </style>
 </head>
